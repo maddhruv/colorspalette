@@ -24,6 +24,21 @@ const palette: Palette = {
     ],
     keywords: ["rainbow", "rainbow colors"],
   },
+  sea: {
+    name: "Sea",
+    colors: ["#E7F7EC", "#D4E8E9", "#A1CFFF", "#72D6EE", "#89BFFB", "#2DA0F9"],
+    keywords: ["sea", "ocean", "river", "water"],
+  },
+  beach: {
+    name: "Beach",
+    colors: ["#1A748E", "#55C2D6", "#F0DF99", "#D38E31", "#992915"],
+    keywords: ["beach", "sea", "seashore", "ocean"],
+  },
+  table: {
+    name: "Table",
+    colors: ["#D69E33", "#F6D756", "#E79126", "#784919", "#67390A"],
+    keywords: ["table", "chair", "stool", "desk"],
+  },
 };
 
 export default palette;
