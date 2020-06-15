@@ -42,6 +42,14 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="description"
+            content="Various colors palettes for your next project, design or app"
+          />
+          <meta
+            name="keywords"
+            content="colors, color palette, palette, colors palette, palette colors, css colors, css color palettes, css palettes"
+          />
           <link rel="icon" type="image/png" href="/logo-16.png" />
           <link rel="manifest" href="/manifest.json" />
           <meta name="author" content="Dhruv Jain" />
