@@ -29,8 +29,8 @@ export const Color = styled(Box)<ColorProps>`
   transition: z-index 0.3s ease-out;
   text-align: center;
   @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     border-radius: 2px;
   }
   ${({ colorSrc, index, contrast }) => css`
@@ -46,7 +46,7 @@ export const Color = styled(Box)<ColorProps>`
       `}
     }
     @media (max-width: 768px) {
-      left: ${25 * index}px;
+      left: ${38 * index}px;
     }
   `}
   &:hover {
@@ -58,7 +58,7 @@ export const ColorContainer = styled.div`
   position: relative;
   height: 120px;
   @media (max-width: 768px) {
-    height: 40px;
+    height: 60px;
   }
 `;
 

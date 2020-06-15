@@ -48,7 +48,7 @@ const Palette: React.FC<PaletteProps> = ({
               index={index}
               contrast={contrast(color)}
             >
-              COPY
+              <Box display={["none", "block"]}>COPY</Box>
             </Color>
           ))}
         </ColorContainer>
