@@ -6,6 +6,9 @@ import Document, {
   NextScript,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { NextSeo } from "next-seo";
+
+import META from "../config/meta";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -42,10 +45,7 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
             rel="stylesheet"
           />
-          <meta
-            name="description"
-            content="Various colors palettes for your next project, design or app"
-          />
+          <meta name="description" content={META.description} />
           <meta
             name="keywords"
             content="colors, color palette, palette, colors palette, palette colors, css colors, css color palettes, css palettes"
@@ -68,6 +68,47 @@ export default class MyDocument extends Document {
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'UA-168980967-3');`,
+            }}
+          />
+          <NextSeo
+            title={META.title}
+            description={META.description}
+            openGraph={{
+              url: "https://smoothcss.xyz",
+              title: META.title,
+              description: META.description,
+              site_name: META.name,
+              images: [
+                {
+                  url: "https://colorspalette.vercel.app/logo-32.png",
+                  width: 32,
+                  height: 32,
+                  alt: `${META.name} logo`,
+                },
+                {
+                  url: "https://colorspalette.vercel.app/logo-64.png",
+                  width: 64,
+                  height: 64,
+                  alt: `${META.name} logo`,
+                },
+                {
+                  url: "https://colorspalette.vercel.app/logo-128.png",
+                  width: 128,
+                  height: 128,
+                  alt: `${META.name} logo`,
+                },
+                {
+                  url: "https://colorspalette.vercel.app/logo-256.png",
+                  width: 256,
+                  height: 256,
+                  alt: `${META.name} logo`,
+                },
+              ],
+            }}
+            twitter={{
+              handle: "@maddhruv",
+              cardType: "app",
+              site: "@maddhruv",
             }}
           />
         </Head>

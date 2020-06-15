@@ -26,6 +26,7 @@
     "fuse.js": "^6.0.4",
     "next": "^9.4.4",
     "next-offline": "^5.0.2",
+    "next-seo": "^4.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",

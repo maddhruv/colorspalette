@@ -7,6 +7,7 @@ import TitleBar from "../components/TitleBar";
 import { Container } from "../components/common";
 
 import theme from "../config/theme";
+import META from "../config/meta";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -24,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>Colors Palette</title>
+        <title>{META.title}</title>
       </Head>
       <GlobalStyles />
       <TitleBar />
