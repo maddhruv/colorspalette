@@ -181,6 +181,46 @@ const palette: Palette = {
     colors: ["#4D331D", "#74533C", "#C59D7D", "#D0D0D8", "#EFEDF6"],
     keywords: ["coconut", "fruit", "coconut fruit"],
   },
+  gooseberry: {
+    name: "Gooseberry",
+    colors: ["#DADFD0", "#7A8C66", "#778C0C", "#8E8158", "#848469"],
+    keywords: ["gooseberry", "fruit", "gooseberry fruit"],
+  },
+  grape: {
+    name: "Grape",
+    colors: ["#89B061", "#8AB162", "#D9E8BF", "#EDEECE", "#C1DFC3"],
+    keywords: ["grape", "vine", "grapevine", "fruit", "grape fruit"],
+  },
+  grape2: {
+    name: "Grape",
+    colors: ["#BBC0E7", "#B89BE0", "#6546A7", "#571247", "#B477BA"],
+    keywords: ["grape", "vine", "grapevine", "fruit", "grape fruit"],
+  },
+  guava: {
+    name: "Guava",
+    colors: ["#2D2D2F", "#B0BC7C", "#618229", "#D6DD8F", "#F3B0A7"],
+    keywords: ["guava", "fruit", "guava fruit"],
+  },
+  kiwi: {
+    name: "Kiwi",
+    colors: ["#120D0E", "#384D0E", "#82A546", "#D0E3A0", "#A48950", "#F7FBED"],
+    keywords: ["kiwi", "kiwifruit", "fruit", "kiwi fruit"],
+  },
+  lemon: {
+    name: "Lemon",
+    colors: ["#D19402", "#FFDF30", "#FFEAA4", "#80A300", "#2D3F01"],
+    keywords: ["lemon", "lime", "fruit", "lemon fruit"],
+  },
+  olive: {
+    name: "Olive",
+    colors: ["#1C4015", "#54915F", "#9AD5D3"],
+    keywords: ["olive", "fruit", "olive fruit"],
+  },
+  orange: {
+    name: "Orange",
+    colors: ["#FFA809", "#FA7001", "#F8E9A4", "#F3CA10", "#6D9302"],
+    keywords: ["orange", "fruit", "orange fruit"],
+  },
 };
 
 export default palette;
