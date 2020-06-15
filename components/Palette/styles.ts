@@ -49,4 +49,5 @@ export const Keyword = styled.span`
   background: rgba(0, 0, 0, 0.05);
   margin-right: 4px;
   padding: 4px;
+  cursor: pointer;
 `;

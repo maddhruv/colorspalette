@@ -16,6 +16,7 @@ const Palette: React.FC<PaletteProps> = ({
   name,
   colors,
   keywords,
+  handleKeyword,
 }: PaletteProps) => {
   const [toastOpen, setToastOpen] = useState<boolean>(false);
 
@@ -50,7 +51,9 @@ const Palette: React.FC<PaletteProps> = ({
       </Box>
       <Box>
         {keywords.map((keyword) => (
-          <Keyword key={keyword}>#{keyword}</Keyword>
+          <Keyword key={keyword} onClick={() => handleKeyword(keyword)}>
+            {keyword}
+          </Keyword>
         ))}
       </Box>
       <Toast open={toastOpen}>Copied</Toast>

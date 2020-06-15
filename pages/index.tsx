@@ -41,7 +41,13 @@ const Home: NextPage = () => {
       <Box>
         <div>
           {Object.entries(palettes).map(([id, { name, colors, keywords }]) => (
-            <Palette key={id} name={name} colors={colors} keywords={keywords} />
+            <Palette
+              key={id}
+              name={name}
+              colors={colors}
+              keywords={keywords}
+              handleKeyword={(keyword) => setQuery(keyword)}
+            />
           ))}
         </div>
       </Box>
