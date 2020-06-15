@@ -39,8 +39,8 @@ const Palette: React.FC<PaletteProps> = ({
   const isHomePage = source === "homepage";
 
   return (
-    <PaletteWrapper>
-      <Box width={9 / 10} p={16} mb={16} flexDirection="column">
+    <PaletteWrapper id="palettewrapper">
+      <Box width={[8 / 10, 9 / 10]} p={16} flexDirection="column">
         <Box mb={16}>
           <PaletteHeader>{name}</PaletteHeader>
         </Box>
@@ -73,7 +73,7 @@ const Palette: React.FC<PaletteProps> = ({
         <Toast open={toastOpen}>Copied</Toast>
       </Box>
       <Box
-        width={1 / 10}
+        width={[2 / 10, 1 / 10]}
         textAlign="right"
         flexDirection="column"
         p={"16px"}

@@ -5,6 +5,7 @@ export const PaletteWrapper = styled(Flex)`
   background: #fff;
   border-radius: 4px;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.17);
+  margin-bottom: 12px !important;
 `;
 
 export const PaletteHeader = styled.h2`
