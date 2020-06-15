@@ -1,0 +1,42 @@
+{
+  "name": "colorspalette",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "postinstall": "npx install-types"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maddhruv/colorspalette.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maddhruv/colorspalette/issues"
+  },
+  "homepage": "https://github.com/maddhruv/colorspalette#readme",
+  "dependencies": {
+    "clipboard": "^2.0.6",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
+    "reflexbox": "^4.0.6",
+    "styled-components": "^5.1.1",
+    "styled-reset": "^4.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "@types/reflexbox": "^4.0.1",
+    "@types/styled-components": "^5.1.0",
+    "install-types": "^2.0.1",
+    "typescript": "^3.9.5"
+  }
+}
