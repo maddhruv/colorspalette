@@ -10,6 +10,7 @@ const TitleBar: React.FC = () => {
     <TitleBarWrapper>
       <Flex>
         <Box width={9 / 10}>
+          <img src="/logo.svg" height="32px" />
           <h1>Colors Palette</h1>
         </Box>
         <Box width={1 / 10} textAlign="right">
