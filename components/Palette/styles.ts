@@ -50,7 +50,7 @@ export const Color = styled(Box)<ColorProps>`
     }
   `}
   &:hover {
-    z-index: 100;
+    z-index: 50;
   }
 `;
 
