@@ -22,6 +22,7 @@
   "homepage": "https://github.com/maddhruv/colorspalette#readme",
   "dependencies": {
     "clipboard": "^2.0.6",
+    "fuse.js": "^6.0.4",
     "next": "^9.4.4",
     "next-offline": "^5.0.2",
     "react": "^16.13.1",

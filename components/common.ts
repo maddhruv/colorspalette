@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  padding: 4vh 20vw 3vh 20vw;
+  padding: 0vh 20vw 3vh 20vw;
   @media (max-width: 768px) {
-    padding: 5vh 5vw 5vh 5vw;
+    padding: 0vh 5vw 5vh 5vw;
   }
 `;
 
@@ -27,4 +27,11 @@ export const Toast = styled.div<{ open: boolean }>`
       transform: translate(-50%, 90px);
     `};
   `}
+`;
+
+export const Input = styled.input`
+  width: 99%;
+  height: 32px;
+  padding-left: 8px;
+  font-size: 22px;
 `;
