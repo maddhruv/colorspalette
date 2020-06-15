@@ -57,6 +57,19 @@ export default class MyDocument extends Document {
           <meta content="1 days" name="revisit-after" />
           <meta content="all" name="robots" />
           <meta content="all" name="googlebot" />
+          <script
+            async={true}
+            src="https://www.googletagmanager.com/gtag/js?id=UA-168980967-3"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-168980967-3');`,
+            }}
+          />
         </Head>
         <body>
           <Main />
