@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { Flex, Box } from "reflexbox";
 import Clipboard from "clipboard";
 import contrast from "contrast";
+import { MdOpenInNew } from "react-icons/md";
 
 import { PaletteProps } from "./types";
 import {
@@ -14,10 +16,12 @@ import {
 import { Toast } from "../common";
 
 const Palette: React.FC<PaletteProps> = ({
+  identifier,
   name,
   colors,
   keywords,
   handleKeyword,
+  source,
 }: PaletteProps) => {
   const [toastOpen, setToastOpen] = useState<boolean>(false);
 
@@ -32,35 +36,59 @@ const Palette: React.FC<PaletteProps> = ({
     });
   }, [toastOpen]);
 
+  const isHomePage = source === "homepage";
+
   return (
-    <PaletteWrapper p={16} mb={16} flexDirection="column">
-      <Box mb={16}>
-        <PaletteHeader>{name}</PaletteHeader>
-      </Box>
-      <Box>
-        <ColorContainer>
-          {colors.map((color, index) => (
-            <Color
-              className="copy"
-              data-clipboard-text={color}
-              colorSrc={color}
-              key={color}
-              index={index}
-              contrast={contrast(color)}
+    <PaletteWrapper>
+      <Box width={9 / 10} p={16} mb={16} flexDirection="column">
+        <Box mb={16}>
+          <PaletteHeader>{name}</PaletteHeader>
+        </Box>
+        <Box>
+          <ColorContainer id={`palette-${identifier}`}>
+            {colors.map((color, index) => (
+              <Color
+                className="copy"
+                data-clipboard-text={color}
+                colorSrc={color}
+                key={color}
+                index={index}
+                contrast={contrast(color)}
+              >
+                <Box display={["none", "block"]}>COPY</Box>
+              </Color>
+            ))}
+          </ColorContainer>
+        </Box>
+        <Box>
+          {keywords.map((keyword) => (
+            <Keyword
+              key={keyword}
+              onClick={isHomePage ? () => handleKeyword(keyword) : () => null}
             >
-              <Box display={["none", "block"]}>COPY</Box>
-            </Color>
+              {keyword}
+            </Keyword>
           ))}
-        </ColorContainer>
+        </Box>
+        <Toast open={toastOpen}>Copied</Toast>
       </Box>
-      <Box>
-        {keywords.map((keyword) => (
-          <Keyword key={keyword} onClick={() => handleKeyword(keyword)}>
-            {keyword}
-          </Keyword>
-        ))}
+      <Box
+        width={1 / 10}
+        textAlign="right"
+        flexDirection="column"
+        p={"16px"}
+        fontSize="22px"
+      >
+        {isHomePage && (
+          <Box>
+            <abbr title="Open Palette">
+              <Link href="/[palette]" as={`/${identifier}`}>
+                <MdOpenInNew />
+              </Link>
+            </abbr>
+          </Box>
+        )}
       </Box>
-      <Toast open={toastOpen}>Copied</Toast>
     </PaletteWrapper>
   );
 };
