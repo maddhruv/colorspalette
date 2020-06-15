@@ -32,8 +32,9 @@ const Home: NextPage = () => {
     <>
       <Box mb={"24px"}>
         <Input
-          placeholder="Search Palette..."
+          placeholder="Search Palettes..."
           value={query}
+          type="search"
           onChange={(e) => setQuery(e.target.value)}
         />
       </Box>
