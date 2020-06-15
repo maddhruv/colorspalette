@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Flex, Box } from "reflexbox";
 import Clipboard from "clipboard";
+import contrast from "contrast";
 
 import { PaletteProps } from "./types";
 import {
@@ -42,10 +43,13 @@ const Palette: React.FC<PaletteProps> = ({
             <Color
               className="copy"
               data-clipboard-text={color}
-              color={color}
+              colorSrc={color}
               key={color}
               index={index}
-            />
+              contrast={contrast(color)}
+            >
+              COPY
+            </Color>
           ))}
         </ColorContainer>
       </Box>

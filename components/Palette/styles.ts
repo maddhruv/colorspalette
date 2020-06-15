@@ -12,22 +12,39 @@ export const PaletteHeader = styled.h2`
   font-weight: 500;
 `;
 
-export const Color = styled(Box)<{ color: string; index: number }>`
+export interface ColorProps {
+  colorSrc: string;
+  index: number;
+  contrast: "light" | "dark";
+}
+
+export const Color = styled(Box)<ColorProps>`
   width: 120px;
   height: 100px;
+  line-height: 100px;
+  letter-spacing: 2px;
   border-radius: 8px;
   cursor: pointer;
   position: absolute;
   transition: z-index 0.3s ease-out;
+  text-align: center;
   @media (max-width: 768px) {
     width: 30px;
     height: 30px;
     border-radius: 2px;
   }
-  ${({ color, index }) => css`
-    background: ${color};
+  ${({ colorSrc, index, contrast }) => css`
+    background: ${colorSrc};
+    color: ${colorSrc};
     z-index: ${index};
     left: ${100 * index}px;
+    &:hover {
+      color: #000000;
+      ${contrast === "dark" &&
+      css`
+        color: #ffffff;
+      `}
+    }
     @media (max-width: 768px) {
       left: ${25 * index}px;
     }
