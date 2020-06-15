@@ -116,6 +116,71 @@ const palette: Palette = {
       "avengers",
     ],
   },
+  oneplus: {
+    name: "OnePlus",
+    colors: ["#F7FEFA", "#F60414"],
+    keywords: ["oneplus", "one plus", "1+"],
+  },
+  samsung: {
+    name: "Samsung",
+    colors: ["#1428A0", "#2FB7E5", "#000000"],
+    keywords: ["samsung", "sam sung"],
+  },
+  dell: {
+    name: "dell",
+    colors: ["#007DB8", "#EFEFEF", "#FFFFFF", "#454545"],
+    keywords: ["dell", "dell computers "],
+  },
+  asus: {
+    name: "ASUS",
+    colors: ["#00539B", "#FFFFFF"],
+    keywords: ["asus", "asus laptops"],
+  },
+  apple: {
+    name: "Apple Fruit",
+    colors: ["#781714", "#EB4135", "#FEAD6A", "#FEF695", "#668014"],
+    keywords: ["apple", "fruit", "apple fruit"],
+  },
+  mango: {
+    name: "Mango",
+    colors: ["#FFCC22", "#FFD93A", "#FFEA47", "#FF8242"],
+    keywords: ["mango", "fruit", "mango fruit"],
+  },
+  banana: {
+    name: "Banana",
+    colors: ["#FFFBC9", "#6B3E26", "#FBEC5D"],
+    keywords: ["banana", "fruit", "banana fruit"],
+  },
+  pineapple: {
+    name: "Pineapple",
+    colors: ["#7CB35C", "#557B3F", "#FFD964", "#C27815", "#A14712"],
+    keywords: ["pineapple", "pine apple", "fruit", "pineapple fruit"],
+  },
+  pear: {
+    name: "Pear",
+    colors: ["#6F5930", "#A4B650", "#E7E453", "#D99D26", "#B14934"],
+    keywords: ["pear", "fruit", "pear fruit"],
+  },
+  avocado: {
+    name: "Avocado",
+    colors: ["#4A7337", "#6B8C21", "#DDD48F", "#CDA989", "#704012"],
+    keywords: ["avocado", "fruit", "avocado fruit"],
+  },
+  blackberry: {
+    name: "Blackberry",
+    colors: ["#1E212E", "#261923", "#692536", "#EEF7FB", "#C8E2F0"],
+    keywords: ["blackberry", "fruit", "blackberry fruit"],
+  },
+  cherry: {
+    name: "Cherry",
+    colors: ["#79011C", "#B6203B", "#FF0126", "#FBAAB9"],
+    keywords: ["cherry", "fruit", "cherry fruit"],
+  },
+  coconut: {
+    name: "Coconut",
+    colors: ["#4D331D", "#74533C", "#C59D7D", "#D0D0D8", "#EFEDF6"],
+    keywords: ["coconut", "fruit", "coconut fruit"],
+  },
 };
 
 export default palette;
