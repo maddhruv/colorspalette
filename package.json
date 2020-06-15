@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "npx install-types"
+    "dev": "next",
+    "postinstall": "npx install-types",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
