@@ -14,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Work Sans', sans-serif;
     background: #f8f8f8;
   }
+  a {
+    color: inherit;
+  }
 `;
 
 const App = ({ Component, pageProps }: AppProps) => {
