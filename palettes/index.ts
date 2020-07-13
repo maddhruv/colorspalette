@@ -9,7 +9,7 @@ const palette: Palette = {
   google: {
     name: "Google",
     colors: ["#008744", "#0057e7", "#d62d20", "#ffffff", "#ffa700"],
-    keywords: ["google", "google chrome"],
+    keywords: ["google", "google chrome", "browser", "web browser"],
   },
   rainbow: {
     name: "Rainbow",
@@ -220,6 +220,71 @@ const palette: Palette = {
     name: "Orange",
     colors: ["#FFA809", "#FA7001", "#F8E9A4", "#F3CA10", "#6D9302"],
     keywords: ["orange", "fruit", "orange fruit"],
+  },
+  github: {
+    name: "GitHub",
+    colors: ["#333333", "#f5f5f5", "#4078c0"],
+    keywords: ["github", "git", "git hub"],
+  },
+  flipkart: {
+    name: "Flipkart",
+    colors: ["#F7A200", "#F8E831", "#047BD5"],
+    keywords: ["flipkart", "flip kart", "e-commerce"],
+  },
+  amazon: {
+    name: "Amazon",
+    colors: ["#FF9900", "#000000"],
+    keywords: ["amazon", "aws", "e-commerce"],
+  },
+  paytm: {
+    name: "Paytm",
+    colors: ["#002E6E", "#00B9F1"],
+    keywords: ["paytm", "pay tm", "online payment"],
+  },
+  myntra: {
+    name: "Myntra",
+    colors: ["#F13AB1", "#E72744", "#FD913C", "#F05524", "#29303E"],
+    keywords: ["myntra", "flipkart", "e-commerce"],
+  },
+  ebay: {
+    name: "EBay",
+    colors: ["#E53238", "#0064D3", "#F5AF02", "#86B817"],
+    keywords: ["ebay", "e bay", "e-commerce"],
+  },
+  wordpress: {
+    name: "WordPress",
+    colors: ["#096484", "#4796B3", "#74B6CE", "#52ACCC"],
+    keywords: ["wordpress", "word press"],
+  },
+  redwood: {
+    name: "Redwood Finish Wood",
+    colors: ["#431811", "#8F432B", "#ECB069", "#763C2C", "#B74B25"],
+    keywords: ["redwood", "red wood", "wood", "tree"],
+  },
+  espressowood: {
+    name: "Espresso Wood",
+    colors: ["#231814", "#2D201B", "#432D25", "#35241B"],
+    keywords: ["espresso", "wood", "tree"],
+  },
+  standardwood: {
+    name: "Standard Wood",
+    colors: ["#DEB887", "#A55B53", "#5B270B"],
+    keywords: ["standard", "wood", "tree"],
+  },
+  maple: {
+    name: "Maple Wood",
+    colors: ["#F1C38E", "#E7B983"],
+    keywords: ["maple", "maple wood", "wood", "tree"],
+  },
+  birch: {
+    name: "Birch Wood",
+    colors: ["#E3B581", "#F1C197", "#EFD0B5", "#F6DEC0", "#FFEBD0"],
+    keywords: ["birch", "wood", "tree"],
+  },
+  redsandalwood: {
+    name: "Red Sandalwood",
+    colors: ["#A45A52", "#DEA790", "#E3C4B0", "#DEB49C"],
+    keywords: ["red sandal", "sandalwood", "wood", "tree"],
   },
 };
 
