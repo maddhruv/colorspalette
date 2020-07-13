@@ -14,8 +14,10 @@ const Home: NextPage = () => {
     findAllMatches: true,
     threshold: 0.2,
   });
+
   const [query, setQuery] = useState<string>("");
   const [palettes, setPalettes] = useState(srcPalettes);
+  const [itemSize, setItemSize] = useState<number>(200);
 
   useEffect(() => {
     if (query.length > 1) {
@@ -28,6 +30,12 @@ const Home: NextPage = () => {
       setPalettes(srcPalettes);
     }
   }, [query]);
+
+  useEffect(() => {
+    setItemSize(
+      document.getElementsByClassName("palettewrapper")[0].offsetHeight + 30
+    );
+  }, []);
 
   const Row = ({ index, style }) => {
     const item = Object.entries(palettes)[index];
@@ -62,7 +70,7 @@ const Home: NextPage = () => {
           <List
             height={800}
             itemCount={Object.entries(palettes).length}
-            itemSize={200}
+            itemSize={itemSize}
             width="100%"
           >
             {Row}

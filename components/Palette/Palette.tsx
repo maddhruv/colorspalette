@@ -39,7 +39,10 @@ const Palette: React.FC<PaletteProps> = ({
   const isHomePage = source === "homepage";
 
   return (
-    <PaletteWrapper id="palettewrapper">
+    <PaletteWrapper
+      className="palettewrapper
+    "
+    >
       <Box width={[8 / 10, 9 / 10]} p={16} flexDirection="column">
         <Box mb={16}>
           <PaletteHeader>{name}</PaletteHeader>
