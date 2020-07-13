@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import { Box } from "reflexbox";
 import Fuse from "fuse.js";
+import { FixedSizeList as List } from "react-window";
 
 import Palette from "../components/Palette";
 import { Input } from "../components/common";
@@ -28,6 +29,24 @@ const Home: NextPage = () => {
     }
   }, [query]);
 
+  const Row = ({ index, style }) => {
+    const item = Object.entries(palettes)[index];
+    const [id, { name, colors, keywords }] = item;
+    return (
+      <div style={style}>
+        <Palette
+          key={id}
+          identifier={id}
+          name={name}
+          colors={colors}
+          keywords={keywords}
+          handleKeyword={(keyword) => setQuery(keyword)}
+          source="homepage"
+        />
+      </div>
+    );
+  };
+
   return (
     <>
       <Box mb={"24px"}>
@@ -40,17 +59,14 @@ const Home: NextPage = () => {
       </Box>
       <Box>
         <div>
-          {Object.entries(palettes).map(([id, { name, colors, keywords }]) => (
-            <Palette
-              key={id}
-              identifier={id}
-              name={name}
-              colors={colors}
-              keywords={keywords}
-              handleKeyword={(keyword) => setQuery(keyword)}
-              source="homepage"
-            />
-          ))}
+          <List
+            height={800}
+            itemCount={Object.entries(palettes).length}
+            itemSize={200}
+            width="100%"
+          >
+            {Row}
+          </List>
         </div>
       </Box>
     </>
