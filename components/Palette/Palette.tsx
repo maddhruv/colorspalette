@@ -82,7 +82,7 @@ const Palette: React.FC<PaletteProps> = ({
         {isHomePage && (
           <Box>
             <abbr title="Open Palette">
-              <Link href="/[palette]" as={`/${identifier}`}>
+              <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
                 <MdOpenInNew />
               </Link>
             </abbr>
