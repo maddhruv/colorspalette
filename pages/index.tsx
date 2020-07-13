@@ -32,9 +32,12 @@ const Home: NextPage = () => {
   }, [query]);
 
   useEffect(() => {
-    setItemSize(
-      document.getElementsByClassName("palettewrapper")[0].offsetHeight + 30
-    );
+    const element: HTMLElement | Element = document.getElementsByClassName(
+      "palettewrapper"
+    )[0];
+    if (element instanceof HTMLElement) {
+      setItemSize(element.offsetHeight + 30);
+    }
   }, []);
 
   const Row = ({ index, style }) => {
