@@ -4,7 +4,8 @@ type Actions =
   | "copy-to-clipboard"
   | "click-github"
   | "click-tag"
-  | "click-palette";
+  | "click-palette"
+  | "search";
 
 export interface Event {
   category: Categories;

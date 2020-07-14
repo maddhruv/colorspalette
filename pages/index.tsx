@@ -9,6 +9,7 @@ import { Input } from "../components/common";
 
 import { Container } from "../components/common";
 import srcPalettes from "../palettes";
+import { track } from "../lib/analytics";
 
 const Home: NextPage = () => {
   const fuse = new Fuse(Object.values(srcPalettes), {
@@ -28,6 +29,11 @@ const Home: NextPage = () => {
         obj[palette.item.name] = { ...palette.item };
       });
       setPalettes(obj);
+      track({
+        action: "search",
+        category: "homepage",
+        label: query,
+      });
     } else {
       setPalettes(srcPalettes);
     }
