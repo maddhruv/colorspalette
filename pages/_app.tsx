@@ -4,7 +4,6 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 import TitleBar from "../components/TitleBar";
-import { Container } from "../components/common";
 
 import theme from "../config/theme";
 import META from "../config/meta";
@@ -29,9 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <GlobalStyles />
       <TitleBar />
-      <Container>
-        <Component {...pageProps} />
-      </Container>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };

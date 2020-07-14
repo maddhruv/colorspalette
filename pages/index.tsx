@@ -6,6 +6,8 @@ import { FixedSizeList as List } from "react-window";
 
 import Palette from "../components/Palette";
 import { Input } from "../components/common";
+
+import { Container } from "../components/common";
 import srcPalettes from "../palettes";
 
 const Home: NextPage = () => {
@@ -59,7 +61,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <>
+    <Container>
       <Box mb={"24px"}>
         <Input
           placeholder="Search Palettes..."
@@ -80,7 +82,7 @@ const Home: NextPage = () => {
           </List>
         </div>
       </Box>
-    </>
+    </Container>
   );
 };
 

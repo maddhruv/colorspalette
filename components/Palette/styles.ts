@@ -1,16 +1,23 @@
 import styled, { css } from "styled-components";
 import { Flex, Box } from "reflexbox";
 
-export const PaletteWrapper = styled(Flex)`
+export const PaletteWrapper = styled(Flex)<{ isHomePage: boolean }>`
   background: #fff;
   border-radius: 4px;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.17);
   margin-bottom: 12px !important;
+  ${({ isHomePage }) => css`
+    ${!isHomePage &&
+    css`
+      height: 85vh;
+    `}
+  `}
 `;
 
 export const PaletteHeader = styled.h2`
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 500;
+  cursor: pointer;
 `;
 
 export interface ColorProps {
@@ -21,17 +28,14 @@ export interface ColorProps {
 
 export const Color = styled(Box)<ColorProps>`
   width: 100%;
-  height: 100px;
-  line-height: 100px;
+  height: 95%;
   letter-spacing: 2px;
   cursor: pointer;
   transition: z-index 0.3s ease-out;
   text-align: center;
   @media (max-width: 768px) {
     width: 100%;
-    height: 45px;
-    line-height: 45px;
-    border-radius: 2px;
+    height: 95%;
   }
   ${({ colorSrc, index, contrast }) => css`
     background: ${colorSrc};
@@ -54,12 +58,24 @@ export const Color = styled(Box)<ColorProps>`
   }
 `;
 
-export const ColorContainer = styled(Flex)`
+export const ColorContainer = styled(Flex)<{ isHomePage: boolean }>`
   position: relative;
   height: 120px;
   @media (max-width: 768px) {
     height: 60px;
   }
+  ${({ isHomePage }) => css`
+    ${!isHomePage &&
+    css`
+      height: 70vh;
+      line-height: 70vh;
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 70vh;
+        line-height: 70vh;
+      }
+    `}
+  `}
 `;
 
 export const Keyword = styled.span`
@@ -67,4 +83,5 @@ export const Keyword = styled.span`
   margin-right: 4px;
   padding: 4px;
   cursor: pointer;
+  font-size: 0.8rem;
 `;

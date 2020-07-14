@@ -40,14 +40,17 @@ const Palette: React.FC<PaletteProps> = ({
 
   return (
     <PaletteWrapper
-      className="palettewrapper
-    "
+      className="palettewrapper"
+      isHomePage={isHomePage}
+      flexDirection={isHomePage ? ["column", "row"] : "column"}
     >
-      <Box width={[8 / 10, 9 / 10]} p={16} flexDirection="column">
+      <Box width={isHomePage ? [1, 9 / 10] : 1} p={16} flexDirection="column">
         <Box mb={16}>
-          <PaletteHeader>{name}</PaletteHeader>
+          <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
+            <PaletteHeader>{name}</PaletteHeader>
+          </Link>
         </Box>
-        <ColorContainer id={`palette-${identifier}`}>
+        <ColorContainer id={`palette-${identifier}`} isHomePage={isHomePage}>
           {colors.map((color, index) => (
             <Box width={1 / colors.length}>
               <Color
@@ -58,7 +61,9 @@ const Palette: React.FC<PaletteProps> = ({
                 index={index}
                 contrast={contrast(color)}
               >
-                <Box display={["none", "block"]}>COPY</Box>
+                <Box display={["none", "block"]} justifyContent="center">
+                  COPY
+                </Box>
               </Color>
             </Box>
           ))}
@@ -76,7 +81,7 @@ const Palette: React.FC<PaletteProps> = ({
         <Toast open={toastOpen}>Copied</Toast>
       </Box>
       <Box
-        width={[2 / 10, 1 / 10]}
+        width={isHomePage ? [1, 1 / 10] : 1}
         textAlign="right"
         flexDirection="column"
         p={"16px"}
