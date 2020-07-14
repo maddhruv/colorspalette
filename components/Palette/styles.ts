@@ -58,6 +58,7 @@ export const ColorContainer = styled(Flex)<{ isHomePage: boolean }>`
   line-height: 120px;
   @media (max-width: 768px) {
     height: 60px;
+    line-height: 60px;
   }
   ${({ isHomePage }) => css`
     ${!isHomePage &&
