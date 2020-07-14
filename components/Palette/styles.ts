@@ -22,7 +22,6 @@ export const PaletteHeader = styled.h2`
 
 export interface ColorProps {
   colorSrc: string;
-  index: number;
   contrast: "light" | "dark";
 }
 
@@ -37,20 +36,15 @@ export const Color = styled(Box)<ColorProps>`
     width: 100%;
     height: 95%;
   }
-  ${({ colorSrc, index, contrast }) => css`
+  ${({ colorSrc, contrast }) => css`
     background: ${colorSrc};
     color: ${colorSrc};
-    z-index: ${index};
-    left: ${100 * index}px;
     &:hover {
       color: #000000;
       ${contrast === "dark" &&
       css`
         color: #ffffff;
       `};
-    }
-    @media (max-width: 768px) {
-      left: ${38 * index}px;
     }
   `}
   &:hover {
@@ -61,6 +55,7 @@ export const Color = styled(Box)<ColorProps>`
 export const ColorContainer = styled(Flex)<{ isHomePage: boolean }>`
   position: relative;
   height: 120px;
+  line-height: 120px;
   @media (max-width: 768px) {
     height: 60px;
   }

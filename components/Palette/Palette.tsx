@@ -79,24 +79,23 @@ const Palette: React.FC<PaletteProps> = ({
           </Link>
         </Box>
         <ColorContainer id={`palette-${identifier}`} isHomePage={isHomePage}>
-          {colors.map((color, index) => (
+          {colors.map((color) => (
             <Box width={1 / colors.length}>
               <Color
                 className="copy"
                 data-clipboard-text={color}
                 colorSrc={color}
                 key={color}
-                index={index}
                 contrast={contrast(color)}
               >
-                <Box display={["none", "block"]} justifyContent="center">
+                <Box display={["none", "block"]} height="100%">
                   COPY
                 </Box>
               </Color>
             </Box>
           ))}
         </ColorContainer>
-        <Box>
+        <Box mt="4px">
           {keywords.map((keyword) => (
             <Keyword key={keyword} onClick={() => handleKeywordClick(keyword)}>
               {keyword}

@@ -1,8 +1,11 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 import srcPalettes from "../palettes";
 import Palette from "../components/Palette";
+
+import META from "../config/meta";
 
 const PalettePage = () => {
   const router = useRouter();
@@ -18,8 +21,16 @@ const PalettePage = () => {
 
   const { name, colors, keywords } = paletteSrc;
 
+  const pageTitle = `${name} color palette | ${META.title}`;
+
+  const description = `${pageTitle}, ${META.description}`;
+
   return (
     <div>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+      </Head>
       <Palette
         identifier={palette as string}
         name={name}
