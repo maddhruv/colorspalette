@@ -15,6 +15,8 @@ import {
 } from "./styles";
 import { Toast } from "../common";
 
+import { track } from "../../lib/analytics";
+
 const Palette: React.FC<PaletteProps> = ({
   identifier,
   name,
@@ -29,6 +31,11 @@ const Palette: React.FC<PaletteProps> = ({
     const clipboard = new Clipboard(".copy");
     clipboard.on("success", (e) => {
       setToastOpen(true);
+      track({
+        action: "copy-to-clipboard",
+        category: isHomePage ? "homepage" : "palette",
+        label: e.text,
+      });
       setTimeout(() => {
         setToastOpen(false);
       }, 1800);
@@ -37,6 +44,17 @@ const Palette: React.FC<PaletteProps> = ({
   }, [toastOpen]);
 
   const isHomePage = source === "homepage";
+
+  const handleKeywordClick = (keyword) => {
+    if (isHomePage) {
+      handleKeyword(keyword);
+      track({
+        action: "click-tag",
+        category: "homepage",
+        label: keyword,
+      });
+    }
+  };
 
   return (
     <PaletteWrapper
@@ -47,7 +65,17 @@ const Palette: React.FC<PaletteProps> = ({
       <Box width={isHomePage ? [1, 9 / 10] : 1} p={16} flexDirection="column">
         <Box mb={16}>
           <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
-            <PaletteHeader>{name}</PaletteHeader>
+            <PaletteHeader
+              onClick={() =>
+                track({
+                  action: "click-palette",
+                  category: isHomePage ? "homepage" : "palette",
+                  label: identifier,
+                })
+              }
+            >
+              {name}
+            </PaletteHeader>
           </Link>
         </Box>
         <ColorContainer id={`palette-${identifier}`} isHomePage={isHomePage}>
@@ -70,10 +98,7 @@ const Palette: React.FC<PaletteProps> = ({
         </ColorContainer>
         <Box>
           {keywords.map((keyword) => (
-            <Keyword
-              key={keyword}
-              onClick={isHomePage ? () => handleKeyword(keyword) : () => null}
-            >
+            <Keyword key={keyword} onClick={() => handleKeywordClick(keyword)}>
               {keyword}
             </Keyword>
           ))}
@@ -91,7 +116,15 @@ const Palette: React.FC<PaletteProps> = ({
           <Box>
             <abbr title="Open Palette">
               <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
-                <MdOpenInNew />
+                <MdOpenInNew
+                  onClick={() =>
+                    track({
+                      action: "click-palette",
+                      category: "homepage",
+                      label: identifier,
+                    })
+                  }
+                />
               </Link>
             </abbr>
           </Box>

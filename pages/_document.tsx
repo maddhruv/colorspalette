@@ -74,31 +74,31 @@ export default class MyDocument extends Document {
             title={META.title}
             description={META.description}
             openGraph={{
-              url: "https://smoothcss.xyz",
+              url: "https://colorspalette.design",
               title: META.title,
               description: META.description,
               site_name: META.name,
               images: [
                 {
-                  url: "https://colorspalette.vercel.app/logo-32.png",
+                  url: "https://colorspalette.design/logo-32.png",
                   width: 32,
                   height: 32,
                   alt: `${META.name} logo`,
                 },
                 {
-                  url: "https://colorspalette.vercel.app/logo-64.png",
+                  url: "https://colorspalette.design/logo-64.png",
                   width: 64,
                   height: 64,
                   alt: `${META.name} logo`,
                 },
                 {
-                  url: "https://colorspalette.vercel.app/logo-128.png",
+                  url: "https://colorspalette.design/logo-128.png",
                   width: 128,
                   height: 128,
                   alt: `${META.name} logo`,
                 },
                 {
-                  url: "https://colorspalette.vercel.app/logo-256.png",
+                  url: "https://colorspalette.design/logo-256.png",
                   width: 256,
                   height: 256,
                   alt: `${META.name} logo`,

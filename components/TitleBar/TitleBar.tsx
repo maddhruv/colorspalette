@@ -5,6 +5,7 @@ import { Flex, Box } from "reflexbox";
 import { FaGithub } from "react-icons/fa";
 
 import { TitleBarWrapper } from "./styles";
+import { track } from "../../lib/analytics";
 
 const TitleBar: React.FC = () => {
   return (
@@ -20,7 +21,15 @@ const TitleBar: React.FC = () => {
         </Box>
         <Box width={1 / 10} textAlign="right">
           <a href="https://github.com/maddhruv/colorspalette">
-            <FaGithub />
+            <FaGithub
+              onClick={() =>
+                track({
+                  action: "click-github",
+                  category: "homepage",
+                  label: "github",
+                })
+              }
+            />
           </a>
         </Box>
       </Flex>
