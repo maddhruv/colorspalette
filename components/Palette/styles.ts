@@ -20,18 +20,17 @@ export interface ColorProps {
 }
 
 export const Color = styled(Box)<ColorProps>`
-  width: 120px;
+  width: 100%;
   height: 100px;
   line-height: 100px;
   letter-spacing: 2px;
-  border-radius: 8px;
   cursor: pointer;
-  position: absolute;
   transition: z-index 0.3s ease-out;
   text-align: center;
   @media (max-width: 768px) {
-    width: 45px;
+    width: 100%;
     height: 45px;
+    line-height: 45px;
     border-radius: 2px;
   }
   ${({ colorSrc, index, contrast }) => css`
@@ -44,7 +43,7 @@ export const Color = styled(Box)<ColorProps>`
       ${contrast === "dark" &&
       css`
         color: #ffffff;
-      `}
+      `};
     }
     @media (max-width: 768px) {
       left: ${38 * index}px;
@@ -55,7 +54,7 @@ export const Color = styled(Box)<ColorProps>`
   }
 `;
 
-export const ColorContainer = styled.div`
+export const ColorContainer = styled(Flex)`
   position: relative;
   height: 120px;
   @media (max-width: 768px) {

@@ -47,9 +47,9 @@ const Palette: React.FC<PaletteProps> = ({
         <Box mb={16}>
           <PaletteHeader>{name}</PaletteHeader>
         </Box>
-        <Box>
-          <ColorContainer id={`palette-${identifier}`}>
-            {colors.map((color, index) => (
+        <ColorContainer id={`palette-${identifier}`}>
+          {colors.map((color, index) => (
+            <Box width={1 / colors.length}>
               <Color
                 className="copy"
                 data-clipboard-text={color}
@@ -60,9 +60,9 @@ const Palette: React.FC<PaletteProps> = ({
               >
                 <Box display={["none", "block"]}>COPY</Box>
               </Color>
-            ))}
-          </ColorContainer>
-        </Box>
+            </Box>
+          ))}
+        </ColorContainer>
         <Box>
           {keywords.map((keyword) => (
             <Keyword
