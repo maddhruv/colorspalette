@@ -4,6 +4,11 @@ import { Flex, Box } from "reflexbox";
 import Clipboard from "clipboard";
 import contrast from "contrast";
 import { MdOpenInNew } from "react-icons/md";
+import dynamic from "next/dynamic";
+
+// const DynamicComponent = dynamic(() =>
+//   import('../ScreenShot/ScreenShot').then((ScreenShot) => ScreenShot)
+// )
 
 import { PaletteProps } from "./types";
 import {
@@ -128,6 +133,8 @@ const Palette: React.FC<PaletteProps> = ({
             </abbr>
           </Box>
         )}
+
+        {/* <DynamicComponent ></DynamicComponent> */}
       </Box>
     </PaletteWrapper>
   );
