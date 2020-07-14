@@ -26,7 +26,7 @@ const Home: NextPage = () => {
     if (query.length > 1) {
       const obj = {};
       fuse.search(query).forEach((palette) => {
-        obj[palette.item.name] = { ...palette.item };
+        obj[palette.item.id] = { ...palette.item };
       });
       setPalettes(obj);
       track({
