@@ -1,7 +1,7 @@
 const META = {
   name: "ColorsPalette",
   title: "Colors Palette",
-  description: "Various colors palettes for your next project, design or app",
+  description: "Color Palettes for your next app, design or art",
 };
 
 export default META;
