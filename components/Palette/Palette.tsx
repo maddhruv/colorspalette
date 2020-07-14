@@ -107,11 +107,12 @@ const Palette: React.FC<PaletteProps> = ({
         </Box>
         <Toast open={toastOpen}>Copied</Toast>
       </Box>
-      <Box
+      <Flex
         width={isHomePage ? [1, 1 / 10] : 1}
         textAlign="right"
-        flexDirection="column"
-        p={"16px"}
+        flexDirection={["row", "column"]}
+        pl="16px"
+        pb="16px"
         fontSize="22px"
       >
         <>
@@ -141,7 +142,7 @@ const Palette: React.FC<PaletteProps> = ({
             </abbr>
           </Box>
         </>
-      </Box>
+      </Flex>
     </PaletteWrapper>
   );
 };
