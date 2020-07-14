@@ -35,3 +35,23 @@ export const Input = styled.input`
   padding-left: 8px;
   font-size: 22px;
 `;
+
+export const Credit = styled.div`
+  padding: 10px;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0px 1px 3px -1px rgba(0, 0, 0, 0.1),
+    0px 3px 6px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  position: fixed;
+  top: 95vh;
+  left: 77vw;
+  * {
+    text-decoration: none;
+    color: inherit;
+  }
+  @media (max-width: 768px) {
+    top: 92vh;
+    left: 10vw;
+  }
+`;

@@ -5,7 +5,8 @@ type Actions =
   | "click-github"
   | "click-tag"
   | "click-palette"
-  | "search";
+  | "search"
+  | "click-profile";
 
 export interface Event {
   category: Categories;

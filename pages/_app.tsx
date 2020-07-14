@@ -7,6 +7,8 @@ import TitleBar from "../components/TitleBar";
 
 import theme from "../config/theme";
 import META from "../config/meta";
+import { Credit } from "../components/common";
+import { track } from "../lib/analytics";
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -29,6 +31,20 @@ const App = ({ Component, pageProps }: AppProps) => {
       <GlobalStyles />
       <TitleBar />
       <Component {...pageProps} />
+      <Credit>
+        <a
+          href="https://maddhruv.github.io/?ref=colorspalette"
+          onClick={() =>
+            track({
+              action: "click-profile",
+              category: "homepage",
+              label: "none",
+            })
+          }
+        >
+          Created with care by Dhruv Jain
+        </a>
+      </Credit>
     </ThemeProvider>
   );
 };
