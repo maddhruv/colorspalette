@@ -27,14 +27,14 @@ export interface ColorProps {
 
 export const Color = styled(Box)<ColorProps>`
   width: 100%;
-  height: 95%;
+  height: 100%;
   letter-spacing: 2px;
   cursor: pointer;
   transition: z-index 0.3s ease-out;
   text-align: center;
   @media (max-width: 768px) {
     width: 100%;
-    height: 95%;
+    height: 100%;
   }
   ${({ colorSrc, contrast }) => css`
     background: ${colorSrc};

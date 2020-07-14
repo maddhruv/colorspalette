@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Flex, Box } from "reflexbox";
 import Clipboard from "clipboard";
 import contrast from "contrast";
@@ -16,6 +17,8 @@ import {
 import { Toast } from "../common";
 
 import { track } from "../../lib/analytics";
+
+const PaletteImage = dynamic(() => import("../PalleteImage"), { ssr: false });
 
 const Palette: React.FC<PaletteProps> = ({
   identifier,
@@ -111,23 +114,33 @@ const Palette: React.FC<PaletteProps> = ({
         p={"16px"}
         fontSize="22px"
       >
-        {isHomePage && (
+        <>
+          {isHomePage && (
+            <Box>
+              <abbr title="Open Palette">
+                <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
+                  <MdOpenInNew
+                    onClick={() =>
+                      track({
+                        action: "click-palette",
+                        category: "homepage",
+                        label: identifier,
+                      })
+                    }
+                  />
+                </Link>
+              </abbr>
+            </Box>
+          )}
           <Box>
-            <abbr title="Open Palette">
-              <Link href="/[palette]" as={`/${identifier.toLowerCase()}`}>
-                <MdOpenInNew
-                  onClick={() =>
-                    track({
-                      action: "click-palette",
-                      category: "homepage",
-                      label: identifier,
-                    })
-                  }
-                />
-              </Link>
+            <abbr title="Download Palette">
+              <PaletteImage
+                identifier={`palette-${identifier}`}
+                isHomePage={isHomePage}
+              />
             </abbr>
           </Box>
-        )}
+        </>
       </Box>
     </PaletteWrapper>
   );

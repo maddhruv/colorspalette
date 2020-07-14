@@ -6,7 +6,8 @@ type Actions =
   | "click-tag"
   | "click-palette"
   | "search"
-  | "click-profile";
+  | "click-profile"
+  | "download-palette";
 
 export interface Event {
   category: Categories;
